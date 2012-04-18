@@ -11,7 +11,9 @@
  * @author federico
  */
 class Controlador {
-    //put your code here
+    public $name;
+    
+    //public 
 }
 
 ?>
