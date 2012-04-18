@@ -1,0 +1,61 @@
+GitHub Markup
+=============
+
+We use this library on GitHub when rendering your README or any other
+rich text file.
+
+Markups
+-------
+
+The following markups are supported.  The dependencies listed are required if
+you wish to run the library.
+
+* [.markdown](http://daringfireball.net/projects/markdown/) -- `gem install redcarpet` (https://github.com/tanoku/redcarpet)
+* [.textile](http://www.textism.com/tools/textile/) -- `gem install RedCloth`
+* [.rdoc](http://rdoc.sourceforge.net/) -- `gem install rdoc -v 3.6.1`
+* [.org](http://orgmode.org/) -- `gem install org-ruby`
+* [.creole](http://wikicreole.org/) -- `gem install creole`
+* [.mediawiki](http://www.mediawiki.org/wiki/Help:Formatting) -- `gem install wikicloth`
+* [.rst](http://docutils.sourceforge.net/rst.html) -- `easy_install docutils`
+* [.asciidoc](http://www.methods.co.nz/asciidoc/) -- `brew install asciidoc`
+* [.pod](http://search.cpan.org/dist/perl/pod/perlpod.pod) -- `Pod::Simple::HTML`
+  comes with Perl >= 5.10. Lower versions should install Pod::Simple from CPAN.
+
+
+require 'github/markup'
+GitHub::Markup.render('README.markdown', "* One\n* Two")
+
+# Proyecto Wishlist aplicando Patron MVC y Orientación a Objetos'''
+
+
+- Creación de varios ficheros a modo de inicio
+- Diseño de la Clase Wish
+
+
+
+- - - -
+## TODO:'''
+-Estructura de directorios
+
+Markdown: Syntax ================
+
+    Main
+    Basics
+    Syntax
+    License
+    Dingus
+
+* [Overview](#overview) * [Philosophy](#philosophy) * [Inline HTML](#html) * [Automatic Escaping for Special Characters](#autoescape) * [Block Elements](#block) * [Paragraphs and Line Breaks](#p) * [Headers](#header) * [Blockquotes](#blockquote) * [Lists](#list) * [Code Blocks](#precode) * [Horizontal Rules](#hr) * [Span Elements](#span) * [Links](#link) * [Emphasis](#em) * [Code](#code) * [Images](#img) * [Miscellaneous](#misc) * [Backslash Escapes](#backslash) * [Automatic Links](#autolink) **Note:** This document is itself written using Markdown; you can [see the source for it by adding '.text' to the URL][src]. [src]: /projects/markdown/syntax.text * * *
+Overview
+Philosophy
+Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions. While Markdown's syntax has been influenced by several existing text-to-HTML filters -- including [Setext] [1], [atx] [2], [Textile] [3], [reStructuredText] [4], [Grutatext] [5], and [EtText] [6] -- the single biggest source of inspiration for Markdown's syntax is the format of plain text email. [1]: http://docutils.sourceforge.net/mirror/setext.html [2]: http://www.aaronsw.com/2002/atx/ [3]: http://textism.com/tools/textile/ [4]: http://docutils.sourceforge.net/rst.html [5]: http://www.triptico.com/software/grutatxt.html [6]: http://ettext.taint.org/doc/ To this end, Markdown's syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like \*emphasis\*. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you've ever used email.
+Inline HTML
+Markdown's syntax is intended for one purpose: to be used as a format for *writing* for the web. Markdown is not a replacement for HTML, or even close to it. Its syntax is very small, corresponding only to a very small subset of HTML tags. The idea is *not* to create a syntax that makes it easier to insert HTML tags. In my opinion, HTML tags are already easy to insert. The idea for Markdown is to make it easy to read, write, and edit prose. HTML is a *publishing* format; Markdown is a *writing* format. Thus, Markdown's formatting syntax only addresses issues that can be conveyed in plain text. For any markup that is not covered by Markdown's syntax, you simply use HTML itself. There's no need to preface it or delimit it to indicate that you're switching from Markdown to HTML; you just use the tags. The only restrictions are that block-level HTML elements -- e.g. `
+`, ``, `
+
+`, `
+
+`, etc. -- must be separated from surrounding content by blank lines, and the start and end tags of the block should not be indented with tabs or spaces. Markdown is smart enough not to add extra (unwanted) `
+
+` tags around HTML block-level tags. For example, to add an HTML table to a Markdown article: This is a regular paragraph.
+
