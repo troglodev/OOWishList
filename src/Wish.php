@@ -11,7 +11,11 @@
  * @author federico
  */
 class Wish {
-    //put your code here
+    public $id;
+    public $title;
+    public $description;
+    public $date;
+    public $status;
 }
 
 ?>
