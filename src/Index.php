@@ -6,19 +6,13 @@
  */
 
 /**
- * Description of WishList
+ * Description of Index
  *
  * @author federico
  */
-class WishList {
-
-    //put your code here
-    public $list;
-
-    public function getData() {
-        
-    }
-
+class Index {
+    public $controlador;
+    public $accion;
 }
 
 ?>
