@@ -1,3 +1,6 @@
+require 'github/markup'
+GitHub::Markup.render('README.markdown', "* One\n* Two")
+
 '''Proyecto Wishlist aplicando Patron MVC y Orientación a Objetos'''
 
 
