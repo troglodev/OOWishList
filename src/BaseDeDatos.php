@@ -2,6 +2,8 @@
 
 /*
  * TODO
+ * 
+ * Refactorizar :D
  * Añadir mas validaciones (pej. para no ejecutar consulta si no existe tabla)
  * 
  * Mejorar gestion de errores ¿Una clase nueva?
@@ -89,8 +91,18 @@ class BaseDeDatos {
         
     }
 
-    public function delete() {
-        
+    public function delete($table, $where) {
+        $sql='DELETE FROM '.$table.' ';
+        $sql.='WHERE '.$where;
+        try {
+            return $this->dbh->exec($sql);
+        } catch (PDOException $e) {
+            echo 'Error eliminando registro<br/>';
+            echo 'Codigo: ' . $e->getCode() . '<br/>';
+            echo 'L&iacute;nea: ' . $e->getLine() . '<br/>';
+            echo 'consulta= _' . $sql;
+            return false;
+        }
     }
 
     public function remove() {
