@@ -5,7 +5,15 @@
  *
  * @author federico
  */
-class ConexionBaseDeDatos {
+class BaseDeDatos {
+    
+    public function connect(){}
+    public function select(){}
+    public function update(){}
+    public function insert(){}
+    public function delete(){}
+    public function remove(){}
+    public function disconnect(){}
 
     //put your code here
     private static $connector = 'mysql';
