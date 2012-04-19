@@ -6,15 +6,18 @@ $db = new BaseDeDatos();
 $db->connect();
 $result1 = $db->select('wishers', '*');
 
-$db->insert('wishers', array('null', 'userdump'.date("ms"), 'blablabla'));
+$db->insert('wishers', array('null', 'userdump' . date("ms"), 'blablabla'));
 
 $result2 = $db->select('wishers', '*');
 
-$result3 = $db->select('wishes', '*', 'wisher_id=62');
+$db->update('wishers', array('name' => 'changed!','password'=>'changed!'), array('id'=>64));
+
+$result5 = $db->select('wishers', '*');
+
+
 
 $db->delete('wishers', 'name like "userdump%"');
 $result4 = $db->select('wishers', '*');
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -34,32 +37,31 @@ $result4 = $db->select('wishers', '*');
             foreach ($result1 as $row) {
                 echo $row['id'] . ' - ';
                 echo $row['name'] . ' - ';
-                echo $row['password']. '<br/>';
+                echo $row['password'] . '<br/>';
             }
         }
-echo '**********************<br/>';
-          if (!empty($result2)) {
+        echo '**********************<br/>';
+        if (!empty($result2)) {
             foreach ($result2 as $row) {
                 echo $row['id'] . ' - ';
                 echo $row['name'] . ' - ';
-                echo $row['password']. '<br/>';
+                echo $row['password'] . '<br/>';
             }
         }
-echo '**********************<br/>';      
-        if (!empty($result3)) {
-            foreach ($result3 as $row) {
+        echo '**********************<br/>';
+        if (!empty($result5)) {
+            foreach ($result5 as $row) {
                 echo $row['id'] . ' - ';
-                echo $row['wisher_id'] . ' - ';
-                echo $row['desc'] . ' - ';
-                echo $row['date'] . '<br/>';
+                echo $row['name'] . ' - ';
+                echo $row['password'] . '<br/>';
             }
         }
-        echo '**********************<br/>';      
+        echo '**********************<br/>';
         if (!empty($result4)) {
             foreach ($result4 as $row) {
                 echo $row['id'] . ' - ';
                 echo $row['name'] . ' - ';
-                echo $row['password']. '<br/>';
+                echo $row['password'] . '<br/>';
             }
         }
         ?>
