@@ -1,17 +1,16 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+require 'ConexionBaseDeDatos.php';
 
-/**
- * Description of Modelo
- *
- * @author federico
- */
 class Modelo {
-    //put your code here
+
+    public function query() {
+        //require 'ConexionBaseDedatos.php';
+        $stmt = ConexionBaseDedatos::getInstance()->query("Select * from wishers");
+
+        return $stmt->fetchAll();
+    }
+
 }
 
 ?>

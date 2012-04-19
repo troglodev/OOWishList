@@ -1,17 +1,15 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Vista
- *
- * @author federico
- */
 class Vista {
-    //put your code here
+
+    static function showView($page, $result) {
+        require 'mostrar' . $page . '.php';
+    }
+
+    static function editView($page) {
+        require 'editar' . $page . '.php';
+    }
+
 }
 
 ?>
