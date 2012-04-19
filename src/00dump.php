@@ -11,6 +11,10 @@ $db->insert('wishers', array('null', 'userdump'.date("ms"), 'blablabla'));
 $result2 = $db->select('wishers', '*');
 
 $result3 = $db->select('wishes', '*', 'wisher_id=62');
+
+$db->delete('wishers', 'name like "userdump%"');
+$result4 = $db->select('wishers', '*');
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -48,6 +52,14 @@ echo '**********************<br/>';
                 echo $row['wisher_id'] . ' - ';
                 echo $row['desc'] . ' - ';
                 echo $row['date'] . '<br/>';
+            }
+        }
+        echo '**********************<br/>';      
+        if (!empty($result4)) {
+            foreach ($result4 as $row) {
+                echo $row['id'] . ' - ';
+                echo $row['name'] . ' - ';
+                echo $row['password']. '<br/>';
             }
         }
         ?>
