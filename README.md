@@ -1,11 +1,19 @@
-<h1>Proyecto Wishlist aplicando Patron MVC y Orientación a Objetos</h1>
+<h1>Proyecto Wishlist</h1>
+
+<h2>Carácteristicas</h2>
 
 <ul>
-<li></li>
-<li>h</li>
+<li>Orientación a Objetos</li>
+<li>Patrón MVC</li>
+</ul>
+
+<h2>Cambios:</h2>
+<ul>
+<li>19-04-2012: Trabajando en Clase Base de Datos</li>
 </ul>
 
 <h2>TODO:</h2>
 <ul>
 <li></li>
 </ul>
+
