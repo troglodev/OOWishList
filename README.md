@@ -9,7 +9,7 @@
 
 <h2>Cambios:</h2>
 <ul>
-<li>19-04-2012: Trabajando en Clase Base de Datos</li>
+<li>19-04-2012: Trabajando en la Clase BaseDeDatos</li>
 </ul>
 
 <h2>TODO:</h2>
