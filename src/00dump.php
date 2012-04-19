@@ -25,7 +25,7 @@
         $db->connect();
 
 
-        $result1 = $db->select('widghdfgshers', '*');
+        $result1 = $db->select('wishers', '*');
 
         //insert
         $db->insert('wishers', array('null', 'userdump' . date("ms"), 'blablabla'));
