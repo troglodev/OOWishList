@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * TODO
+ * Añadir mas validaciones (pej. para no ejecutar consulta si no existe tabla)
+ * 
+ * Mejorar gestion de errores ¿Una clase nueva?
+ * 
+ * Utilizar prepare y Quote
+ */
+
 class BaseDeDatos {
 
     private $db_type = 'mysql';
@@ -44,11 +53,39 @@ class BaseDeDatos {
         }
     }
 
-    public function update() {
-        
+    public function insert($table, $values, $rows = null) {
+
+        //insert into wishers values (null,'pepitoeldelospalotes','blabla');
+        $sql = 'INSERT INTO ' . $table;
+        if ($rows != null) {
+            $sql .= ' (' . $rows . ')';
+        }
+
+        for ($i = 0; $i < count($values); $i++) {
+            if ($values[$i] == 'null') {
+                $values[$i] = 'null';
+                continue;
+            }
+            if (is_string($values[$i])) {
+                //Añadir Quote!!!!
+                $values[$i] = '"' . $values[$i] . '"';
+            }
+        }
+        $values = implode(',', $values);
+        $sql .= ' VALUES (' . $values . ')';
+
+        try {
+            return $this->dbh->exec($sql);
+        } catch (PDOException $e) {
+            echo 'Error insertando registro<br/>';
+            echo 'Codigo: ' . $e->getCode() . '<br/>';
+            echo 'L&iacute;nea: ' . $e->getLine() . '<br/>';
+            echo 'consulta= _' . $sql;
+            return false;
+        }
     }
 
-    public function insert() {
+    public function update() {
         
     }
 
