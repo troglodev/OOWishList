@@ -1,6 +1,6 @@
 <h1>Proyecto Wishlist</h1>
 
-<h2>Carácteristicas</h2>
+<h2>Características</h2>
 
 <ul>
 <li>Orientación a Objetos</li>
